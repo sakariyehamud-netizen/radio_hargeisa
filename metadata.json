@@ -1,0 +1,8 @@
+{
+  "name": "Radio Hargeysa",
+  "description": "Radio Hargeysa — Codka Jamhuuriyadda Somaliland. National broadcaster platform with listener mobile app, broadcast studio desk, and admin console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

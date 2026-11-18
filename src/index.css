@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 5%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 5%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 5%;
+  --primary: 137 93% 24%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 14% 97%;
+  --secondary-foreground: 0 0% 5%;
+  --muted: 210 14% 97%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 137 93% 96%;
+  --accent-foreground: 137 93% 20%;
+  --destructive: 359 88% 41%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 137 93% 24%;
+  --chart-1: 137 93% 24%;
+  --chart-2: 359 88% 41%;
+  --chart-3: 217 33% 17%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 142 71% 45%;
+  --radius: 0.9rem;
+  --brand-green: #047422;
+  --brand-red: #C40D0F;
+  --brand-black: #050505;
+  --brand-gray: #6B7280;
+  --brand-dark-gray: #1F2937;
+  --brand-light: #F5F6F7;
+  --font-heading: "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dark {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 137 82% 34%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 9% 12%;
+  --muted: 220 9% 12%;
+  --muted-foreground: 220 9% 62%;
+  --accent: 220 9% 14%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 359 80% 48%;
+  --border: 220 9% 16%;
+  --input: 220 9% 16%;
+  --ring: 137 82% 34%;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: #050505;
+    background-color: #FFFFFF;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #047422;
+    color: #FFFFFF;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes enterRise {
+  0% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .brand-gradient {
+    background: linear-gradient(135deg, #047422 0%, #035a1b 55%, #050505 100%);
+  }
+
+  .rh-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .live-dot {
+    position: relative;
+  }
+
+  .live-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background-color: currentColor;
+    animation: livePulse 1.8s ease-out infinite;
+  }
+
+  .enter-rise {
+    animation: enterRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .rh-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .rh-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .rh-scroll::-webkit-scrollbar-thumb {
+    background: #D8DBDF;
+    border-radius: 9999px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
